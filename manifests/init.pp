@@ -19,6 +19,9 @@
 class groovy (
   $version = 'latest'
 ) {
+
+  validate_re($version, 'present|installed|latest|^[._0-9a-zA-Z:-]+$')
+
   package { 'groovy':
       ensure => $version
   }
